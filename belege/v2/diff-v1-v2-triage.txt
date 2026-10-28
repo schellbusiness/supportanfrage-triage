@@ -1,0 +1,69 @@
+--- v1/triage.js	2026-10-28 15:02:33
++++ v2/triage.js	2026-10-28 15:27:11
+@@ -1,4 +1,4 @@
+-// Supportanfrage - Triage: regelbasierte Einordnung (v1)
++// Supportanfrage - Triage: regelbasierte Einordnung (v2)
+ // Läuft vollständig lokal im Browser. Keine externe API, keine Datenbank, kein Login.
+ // Jede Entscheidung wird mit den gefundenen Signalen begründet, damit sie nachvollziehbar bleibt.
+ 
+@@ -81,6 +81,15 @@
+ 
+ const MAX_ZITAT = 240;
+ 
++// v2: Steueranweisungen an die App (Imperativ am Satzanfang + Bezug auf Regeln oder Einordnung) bleiben Inhalt,
++// werden aber nie ausgeführt und zählen weder für die Kategorie noch als Beleg-Zitat.
++const STEUER_VERB = /^(?:ignorier|vergiss|setz|stuf|änder|behaupt|gib|antwort|schreib|markier|ordne)/iu;
++const STEUER_ZIEL = /(?:regel|anweisung|dringlichkeit|kategorie|priorität|einordnung|system|prompt)/iu;
++
++export function istSteueranweisung(satz) {
++  return STEUER_VERB.test(satz) && STEUER_ZIEL.test(satz);
++}
++
+ export function zaehleZeichen(text) {
+   return Array.from(text ?? '').length;
+ }
+@@ -135,8 +144,7 @@
+ }
+ 
+ // Wählt den Satz mit den meisten Signalen als wörtliches Zitat. Das Zitat ist immer ein Ausschnitt der Eingabe.
+-function waehleZitat(text, signalWorte, hochMuster) {
+-  const saetze = zerlegeInSaetze(text);
++function waehleZitat(saetze, signalWorte, hochMuster) {
+   let bester = saetze[0];
+   let besterWert = -1;
+   for (const satz of saetze) {
+@@ -178,8 +186,13 @@
+   if (!pruefung.ok) return { ok: false, fehler: pruefung };
+   const text = pruefung.text;
+ 
++  const alleSaetze = zerlegeInSaetze(text);
++  const inhaltsSaetze = alleSaetze.filter((satz) => !istSteueranweisung(satz));
++  const belegSaetze = inhaltsSaetze.length ? inhaltsSaetze : alleSaetze;
++  const belegText = belegSaetze.join('\n');
++
+   const rangliste = Object.entries(KATEGORIE_SIGNALE)
+-    .map(([kategorie, worte]) => ({ kategorie, signale: findeSignale(text, worte) }))
++    .map(([kategorie, worte]) => ({ kategorie, signale: findeSignale(belegText, worte) }))
+     .sort((a, b) => b.signale.length - a.signale.length);
+   const [beste, zweite] = rangliste;
+ 
+@@ -210,7 +223,7 @@
+   else if (dringlichkeit.stufe === 'hoch' && dringlichkeit.grund === 'Sicherheitsrisiko') naechsterSchritt = SICHERHEIT_SCHRITT;
+   else naechsterSchritt = SCHRITTE[kategorie][dringlichkeit.stufe];
+ 
+-  const zitat = waehleZitat(text, signale, dringlichkeit.muster);
++  const zitat = waehleZitat(belegSaetze, signale, dringlichkeit.muster);
+ 
+   const begruendungKategorie = signale.length
+     ? `Kategorie ${kategorie}: Signalwörter ${signale.map((s) => `„${s}“`).join(', ')}.`
+--- v1/index.html	2026-10-28 15:04:17
++++ v2/index.html	2026-10-28 15:27:13
+@@ -52,7 +52,7 @@
+       <p class="begruendung"><strong>Begründung:</strong> <span id="begruendung"></span></p>
+     </section>
+ 
+-    <footer>v1 · regelbasiert · keine externe API, keine Datenbank, kein Login</footer>
++    <footer>v2 · regelbasiert · keine externe API, keine Datenbank, kein Login</footer>
+   </main>
+   <script type="module" src="app.js"></script>
+ </body>

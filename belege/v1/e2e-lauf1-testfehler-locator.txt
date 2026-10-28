@@ -1,0 +1,192 @@
+
+Running 7 tests using 2 workers
+
+  ✘  2 [chromium] › tests/e2e/kernpfad.spec.js:7:1 › Kernpfad: Normalfall → Zugang, hoch, konkreter Schritt, wörtliches Zitat (6.6s)
+  ✘  1 [chromium] › tests/e2e/protokoll.spec.js:42:3 › Eingabe 1 – 1 Normalfall (30.1s)
+  ✓  3 [chromium] › tests/e2e/protokoll.spec.js:42:3 › Eingabe 2 – 2 Leer oder fehlend (1.2s)
+  ✓  4 [chromium] › tests/e2e/protokoll.spec.js:42:3 › Eingabe 3 – 3 Überlang (1.1s)
+  ✘  5 [chromium] › tests/e2e/protokoll.spec.js:42:3 › Eingabe 4a – 4 Angriff (30.1s)
+  ✘  6 [chromium] › tests/e2e/protokoll.spec.js:42:3 › Eingabe 4b – 4 Harmloser Gegenfall (30.1s)
+  ✘  7 [chromium] › tests/e2e/protokoll.spec.js:42:3 › Eingabe 5 – 5 Falsches Format / zu wenig Information (30.1s)
+
+
+  1) [chromium] › tests/e2e/kernpfad.spec.js:7:1 › Kernpfad: Normalfall → Zugang, hoch, konkreter Schritt, wörtliches Zitat 
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator: getByRole('region', { name: 'Ergebnis' }).getByRole('definition', { name: 'Kategorie', exact: true })
+    Expected: "Zugang"
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveText" getByRole('region', { name: 'Ergebnis' }).getByRole('definition', { name: 'Kategorie', exact: true }) with timeout 5000ms
+      - waiting for getByRole('region', { name: 'Ergebnis' }).getByRole('definition', { name: 'Kategorie', exact: true })
+
+
+      22 |
+      23 |   // Bestanden
+    > 24 |   await expect(ergebnis.getByRole('definition', { name: 'Kategorie', exact: true })).toHaveText('Zugang');
+         |                                                                                      ^
+      25 |   await expect(ergebnis.getByRole('definition', { name: 'Dringlichkeit', exact: true })).toHaveText('hoch');
+      26 |
+      27 |   const schritt = ergebnis.getByRole('definition', { name: 'Nächster Schritt', exact: true });
+        at /Users/vanessaschell/Meine_Karriere/M5.3-supportanfrage-triage/tests/e2e/kernpfad.spec.js:24:86
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/kernpfad-Kernpfad-Normalfa-d3a2c-er-Schritt-wörtliches-Zitat-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/kernpfad-Kernpfad-Normalfa-d3a2c-er-Schritt-wörtliches-Zitat-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/kernpfad-Kernpfad-Normalfa-d3a2c-er-Schritt-wörtliches-Zitat-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/kernpfad-Kernpfad-Normalfa-d3a2c-er-Schritt-wörtliches-Zitat-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/e2e/protokoll.spec.js:42:3 › Eingabe 1 – 1 Normalfall ──────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.textContent: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('region', { name: 'Ergebnis' }).getByRole('definition', { name: 'Kategorie', exact: true })
+
+
+      25 |   const meldung = page.getByRole('alert');
+      26 |   const sichtbar = await ergebnis.isVisible();
+    > 27 |   const feld = async (name) => (sichtbar ? (await ergebnis.getByRole('definition', { name, exact: true }).textContent()).trim() : null);
+         |                                                                                                           ^
+      28 |   return {
+      29 |     status: (await page.getByRole('status').textContent()).trim(),
+      30 |     fehlermeldung: (await meldung.isVisible()) ? (await meldung.textContent()).trim() : null,
+        at feld (/Users/vanessaschell/Meine_Karriere/M5.3-supportanfrage-triage/tests/e2e/protokoll.spec.js:27:107)
+        at lies (/Users/vanessaschell/Meine_Karriere/M5.3-supportanfrage-triage/tests/e2e/protokoll.spec.js:33:22)
+        at /Users/vanessaschell/Meine_Karriere/M5.3-supportanfrage-triage/tests/e2e/protokoll.spec.js:58:23
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/protokoll-Eingabe-1-–-1-Normalfall-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/protokoll-Eingabe-1-–-1-Normalfall-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/protokoll-Eingabe-1-–-1-Normalfall-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/protokoll-Eingabe-1-–-1-Normalfall-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/e2e/protokoll.spec.js:42:3 › Eingabe 4a – 4 Angriff ────────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.textContent: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('region', { name: 'Ergebnis' }).getByRole('definition', { name: 'Kategorie', exact: true })
+
+
+      25 |   const meldung = page.getByRole('alert');
+      26 |   const sichtbar = await ergebnis.isVisible();
+    > 27 |   const feld = async (name) => (sichtbar ? (await ergebnis.getByRole('definition', { name, exact: true }).textContent()).trim() : null);
+         |                                                                                                           ^
+      28 |   return {
+      29 |     status: (await page.getByRole('status').textContent()).trim(),
+      30 |     fehlermeldung: (await meldung.isVisible()) ? (await meldung.textContent()).trim() : null,
+        at feld (/Users/vanessaschell/Meine_Karriere/M5.3-supportanfrage-triage/tests/e2e/protokoll.spec.js:27:107)
+        at lies (/Users/vanessaschell/Meine_Karriere/M5.3-supportanfrage-triage/tests/e2e/protokoll.spec.js:33:22)
+        at /Users/vanessaschell/Meine_Karriere/M5.3-supportanfrage-triage/tests/e2e/protokoll.spec.js:58:23
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/protokoll-Eingabe-4a-–-4-Angriff-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/protokoll-Eingabe-4a-–-4-Angriff-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/protokoll-Eingabe-4a-–-4-Angriff-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/protokoll-Eingabe-4a-–-4-Angriff-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › tests/e2e/protokoll.spec.js:42:3 › Eingabe 4b – 4 Harmloser Gegenfall ────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.textContent: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('region', { name: 'Ergebnis' }).getByRole('definition', { name: 'Kategorie', exact: true })
+
+
+      25 |   const meldung = page.getByRole('alert');
+      26 |   const sichtbar = await ergebnis.isVisible();
+    > 27 |   const feld = async (name) => (sichtbar ? (await ergebnis.getByRole('definition', { name, exact: true }).textContent()).trim() : null);
+         |                                                                                                           ^
+      28 |   return {
+      29 |     status: (await page.getByRole('status').textContent()).trim(),
+      30 |     fehlermeldung: (await meldung.isVisible()) ? (await meldung.textContent()).trim() : null,
+        at feld (/Users/vanessaschell/Meine_Karriere/M5.3-supportanfrage-triage/tests/e2e/protokoll.spec.js:27:107)
+        at lies (/Users/vanessaschell/Meine_Karriere/M5.3-supportanfrage-triage/tests/e2e/protokoll.spec.js:33:22)
+        at /Users/vanessaschell/Meine_Karriere/M5.3-supportanfrage-triage/tests/e2e/protokoll.spec.js:58:23
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/protokoll-Eingabe-4b-–-4-Harmloser-Gegenfall-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/protokoll-Eingabe-4b-–-4-Harmloser-Gegenfall-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/protokoll-Eingabe-4b-–-4-Harmloser-Gegenfall-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/protokoll-Eingabe-4b-–-4-Harmloser-Gegenfall-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium] › tests/e2e/protokoll.spec.js:42:3 › Eingabe 5 – 5 Falsches Format / zu wenig Information 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.textContent: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('region', { name: 'Ergebnis' }).getByRole('definition', { name: 'Kategorie', exact: true })
+
+
+      25 |   const meldung = page.getByRole('alert');
+      26 |   const sichtbar = await ergebnis.isVisible();
+    > 27 |   const feld = async (name) => (sichtbar ? (await ergebnis.getByRole('definition', { name, exact: true }).textContent()).trim() : null);
+         |                                                                                                           ^
+      28 |   return {
+      29 |     status: (await page.getByRole('status').textContent()).trim(),
+      30 |     fehlermeldung: (await meldung.isVisible()) ? (await meldung.textContent()).trim() : null,
+        at feld (/Users/vanessaschell/Meine_Karriere/M5.3-supportanfrage-triage/tests/e2e/protokoll.spec.js:27:107)
+        at lies (/Users/vanessaschell/Meine_Karriere/M5.3-supportanfrage-triage/tests/e2e/protokoll.spec.js:33:22)
+        at /Users/vanessaschell/Meine_Karriere/M5.3-supportanfrage-triage/tests/e2e/protokoll.spec.js:58:23
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/protokoll-Eingabe-5-–-5-Falsches-Format-zu-wenig-Information-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/protokoll-Eingabe-5-–-5-Falsches-Format-zu-wenig-Information-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/protokoll-Eingabe-5-–-5-Falsches-Format-zu-wenig-Information-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/protokoll-Eingabe-5-–-5-Falsches-Format-zu-wenig-Information-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5 failed
+    [chromium] › tests/e2e/kernpfad.spec.js:7:1 › Kernpfad: Normalfall → Zugang, hoch, konkreter Schritt, wörtliches Zitat 
+    [chromium] › tests/e2e/protokoll.spec.js:42:3 › Eingabe 1 – 1 Normalfall ───────────────────────
+    [chromium] › tests/e2e/protokoll.spec.js:42:3 › Eingabe 4a – 4 Angriff ─────────────────────────
+    [chromium] › tests/e2e/protokoll.spec.js:42:3 › Eingabe 4b – 4 Harmloser Gegenfall ─────────────
+    [chromium] › tests/e2e/protokoll.spec.js:42:3 › Eingabe 5 – 5 Falsches Format / zu wenig Information 
+  2 passed (2.1m)

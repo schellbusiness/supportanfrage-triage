@@ -1,0 +1,11 @@
+✔ B1 v2: Angriff 4a – eingeschobener Satz bestimmt weder Kategorie noch Zitat (11.172292ms)
+✔ Schutz v2: harmloser Gegenfall 4b bleibt Technisches Problem mit Update-Zitat (11.385ms)
+✔ Schutz v2: berechtigte Bitte im Imperativ („Setze bitte mein Passwort zurück“) bleibt Zugang (7.524375ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 77.940208

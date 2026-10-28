@@ -1,0 +1,23 @@
+{
+  "version": "v1",
+  "url": "https://schellbusiness.github.io/supportanfrage-triage/v1/",
+  "zeitpunkt": "2026-10-28T14:22:40.880Z",
+  "eingabe": {
+    "id": "3",
+    "gruppe": "3 Überlang",
+    "zeichen": 5200
+  },
+  "ist": {
+    "status": "Fehler – die Anfrage wurde nicht eingeordnet.",
+    "fehlermeldung": "Die Anfrage ist zu lang: 5.200 Zeichen. Erlaubt sind höchstens 5.000 Zeichen. Bitte kürze den Text und versuche es erneut.",
+    "ergebnisSichtbar": false,
+    "unklarMarkierung": false,
+    "kategorie": null,
+    "dringlichkeit": null,
+    "naechsterSchritt": null,
+    "zitat": null,
+    "begruendung": null,
+    "fremdeAnfragen": [],
+    "browserFehler": []
+  }
+}

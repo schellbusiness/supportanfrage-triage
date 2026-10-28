@@ -1,0 +1,53 @@
+▶ Regeltest v2
+  ▶ R10 Leerfall
+    ✔ leer: abgelehnt, verständliche Meldung, kein Ergebnis (0.361792ms)
+    ✔ nur Leerzeichen (Prüfeingabe 2): abgelehnt, verständliche Meldung, kein Ergebnis (0.047542ms)
+    ✔ Tabs und Zeilenumbrüche: abgelehnt, verständliche Meldung, kein Ergebnis (0.039958ms)
+  ✔ R10 Leerfall (0.777209ms)
+  ▶ R11 Längengrenze
+    ✔ genau 5.000 Zeichen werden angenommen (9.252417ms)
+    ✔ 5.001 Zeichen werden abgelehnt, kein Ergebnis (29.229166ms)
+    ✔ Prüfeingabe 3 (über 5.000 Zeichen) wird abgelehnt, kein Ergebnis (0.540791ms)
+    ✔ Leerraum am Rand zählt nicht: 5.000 Zeichen plus Leerzeichen werden angenommen (0.237667ms)
+  ✔ R11 Längengrenze (39.401333ms)
+  ▶ R2/R3 erlaubte Werte
+    ✔ Eingabe 1: Kategorie und Dringlichkeit stammen aus den erlaubten Listen (0.621667ms)
+    ✔ Eingabe 4a: Kategorie und Dringlichkeit stammen aus den erlaubten Listen (0.236375ms)
+    ✔ Eingabe 4b: Kategorie und Dringlichkeit stammen aus den erlaubten Listen (10.965875ms)
+    ✔ Eingabe 5: Kategorie und Dringlichkeit stammen aus den erlaubten Listen (0.1235ms)
+  ✔ R2/R3 erlaubte Werte (12.076583ms)
+  ▶ R6 wörtliches Beleg-Zitat
+    ✔ Eingabe 1: Zitat ist zeichengenauer Ausschnitt aus vollständigen Wörtern (0.430833ms)
+    ✔ Eingabe 4a: Zitat ist zeichengenauer Ausschnitt aus vollständigen Wörtern (0.072458ms)
+    ✔ Eingabe 4b: Zitat ist zeichengenauer Ausschnitt aus vollständigen Wörtern (0.101459ms)
+    ✖ Eingabe 5: Zitat ist zeichengenauer Ausschnitt aus vollständigen Wörtern (0.445459ms)
+  ✖ R6 wörtliches Beleg-Zitat (1.142042ms)
+✖ Regeltest v2 (53.661167ms)
+ℹ tests 15
+ℹ suites 5
+ℹ pass 14
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 91.906833
+
+✖ failing tests:
+
+test at tests/regeln.test.mjs:75:7
+✖ Eingabe 5: Zitat ist zeichengenauer Ausschnitt aus vollständigen Wörtern (0.445459ms)
+  AssertionError [ERR_ASSERTION]: Zitat schneidet ein Wort/Token ab: "screenshot_final_neu."
+      at TestContext.<anonymous> (file:///Users/vanessaschell/Meine_Karriere/M5.3-supportanfrage-triage/tests/regeln.test.mjs:79:16)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Suite.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Suite.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

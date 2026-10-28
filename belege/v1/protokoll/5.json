@@ -1,0 +1,23 @@
+{
+  "version": "v1",
+  "url": "https://schellbusiness.github.io/supportanfrage-triage/v1/",
+  "zeitpunkt": "2026-10-28T14:22:44.575Z",
+  "eingabe": {
+    "id": "5",
+    "gruppe": "5 Falsches Format / zu wenig Information",
+    "zeichen": 24
+  },
+  "ist": {
+    "status": "Unklare Anfrage – es fehlen Informationen. Bitte Rückfrage stellen.",
+    "fehlermeldung": null,
+    "ergebnisSichtbar": true,
+    "unklarMarkierung": true,
+    "kategorie": "Sonstiges",
+    "dringlichkeit": "niedrig",
+    "naechsterSchritt": "Rückfrage an die anfragende Person: Bitte das Anliegen in ein bis zwei Sätzen beschreiben – was ist passiert, seit wann, und welche Meldung erscheint?",
+    "zitat": "screenshot_final_neu.",
+    "begruendung": "Kategorie Sonstiges: keine passenden Signalwörter. Dringlichkeit niedrig: keine Blockade, kein Sicherheitsrisiko und kein drohender finanzieller Schaden erkennbar.",
+    "fremdeAnfragen": [],
+    "browserFehler": []
+  }
+}

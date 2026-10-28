@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Supportanfrage - Triage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app" data-state="bereit">
+    <header>
+      <h1>Supportanfrage - Triage</h1>
+      <p class="intro">Füge eine Supportanfrage ein und klicke auf „Anfrage einordnen“. Die Einordnung läuft regelbasiert direkt in deinem Browser. Es wird nichts gesendet oder gespeichert.</p>
+    </header>
+
+    <form id="triage-form" novalidate>
+      <label for="anfrage">Supportanfrage</label>
+      <textarea id="anfrage" name="anfrage" rows="8" aria-describedby="zeichen" placeholder="z. B. „Ich kann mich seit heute nicht mehr anmelden …“"></textarea>
+      <div class="form-zeile">
+        <span id="zeichen" class="zaehler">0 / 5.000 Zeichen</span>
+        <button type="submit" id="einordnen">Anfrage einordnen</button>
+      </div>
+    </form>
+
+    <p id="status" class="status" role="status">Bereit – füge eine Supportanfrage ein.</p>
+    <p id="fehler" class="fehler" role="alert" hidden></p>
+
+    <section id="ergebnis" class="ergebnis" aria-labelledby="ergebnis-titel" hidden>
+      <div class="ergebnis-kopf">
+        <h2 id="ergebnis-titel">Ergebnis</h2>
+        <span id="unklar-markierung" class="markierung-unklar" hidden>unklar</span>
+      </div>
+      <p id="unklar-grund" class="unklar-grund" hidden></p>
+      <dl class="felder">
+        <div>
+          <dt id="t-kategorie">Kategorie</dt>
+          <dd id="kategorie" aria-labelledby="t-kategorie"></dd>
+        </div>
+        <div>
+          <dt id="t-dringlichkeit">Dringlichkeit</dt>
+          <dd id="dringlichkeit" aria-labelledby="t-dringlichkeit"></dd>
+        </div>
+        <div class="breit">
+          <dt id="t-schritt">Nächster Schritt</dt>
+          <dd id="schritt" aria-labelledby="t-schritt"></dd>
+        </div>
+        <div class="breit">
+          <dt id="t-zitat">Beleg-Zitat aus der Anfrage</dt>
+          <dd aria-labelledby="t-zitat"><blockquote id="zitat"></blockquote></dd>
+        </div>
+      </dl>
+      <p class="begruendung"><strong>Begründung:</strong> <span id="begruendung"></span></p>
+    </section>
+
+    <footer>v2 · regelbasiert · keine externe API, keine Datenbank, kein Login</footer>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

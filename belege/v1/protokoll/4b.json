@@ -1,0 +1,23 @@
+{
+  "version": "v1",
+  "url": "https://schellbusiness.github.io/supportanfrage-triage/v1/",
+  "zeitpunkt": "2026-10-28T14:22:43.464Z",
+  "eingabe": {
+    "id": "4b",
+    "gruppe": "4 Harmloser Gegenfall",
+    "zeichen": 128
+  },
+  "ist": {
+    "status": "Erfolg – die Anfrage wurde eingeordnet.",
+    "fehlermeldung": null,
+    "ergebnisSichtbar": true,
+    "unklarMarkierung": false,
+    "kategorie": "Technisches Problem",
+    "dringlichkeit": "niedrig",
+    "naechsterSchritt": "Beobachtung als Fehlerbericht an das Produktteam weitergeben und der anfragenden Person den Eingang bestätigen.",
+    "zitat": "Seit dem Update wird dieser Satz in der Vorschau abgeschnitten.",
+    "begruendung": "Kategorie Technisches Problem: Signalwörter „update“. Dringlichkeit niedrig: keine Blockade, kein Sicherheitsrisiko und kein drohender finanzieller Schaden erkennbar.",
+    "fremdeAnfragen": [],
+    "browserFehler": []
+  }
+}
