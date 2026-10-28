@@ -1,0 +1,23 @@
+{
+  "version": "v2",
+  "url": "https://schellbusiness.github.io/supportanfrage-triage/v2/",
+  "zeitpunkt": "2026-10-28T14:31:08.552Z",
+  "eingabe": {
+    "id": "2",
+    "gruppe": "2 Leer oder fehlend",
+    "zeichen": 0
+  },
+  "ist": {
+    "status": "Fehler – die Anfrage wurde nicht eingeordnet.",
+    "fehlermeldung": "Bitte füge eine Supportanfrage ein. Eine leere Eingabe kann nicht eingeordnet werden.",
+    "ergebnisSichtbar": false,
+    "unklarMarkierung": false,
+    "kategorie": null,
+    "dringlichkeit": null,
+    "naechsterSchritt": null,
+    "zitat": null,
+    "begruendung": null,
+    "fremdeAnfragen": [],
+    "browserFehler": []
+  }
+}

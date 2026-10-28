@@ -1,0 +1,23 @@
+{
+  "version": "v2",
+  "url": "https://schellbusiness.github.io/supportanfrage-triage/v2/",
+  "zeitpunkt": "2026-10-28T14:31:07.441Z",
+  "eingabe": {
+    "id": "1",
+    "gruppe": "1 Normalfall",
+    "zeichen": 135
+  },
+  "ist": {
+    "status": "Erfolg – die Anfrage wurde eingeordnet.",
+    "fehlermeldung": null,
+    "ergebnisSichtbar": true,
+    "unklarMarkierung": false,
+    "kategorie": "Zugang",
+    "dringlichkeit": "hoch",
+    "naechsterSchritt": "Sperrgrund im Kundenkonto prüfen, die Identität über einen bereits hinterlegten Kontaktweg bestätigen und den Zugang wieder freischalten, wenn kein Sicherheitsgrund dagegen spricht.",
+    "zitat": "Mein Konto ist seit heute gesperrt.",
+    "begruendung": "Kategorie Zugang: Signalwörter „anmeld“, „passwort“, „gesperrt“, „konto“. Dringlichkeit hoch: komplette Blockade (Signal „gesperrt“).",
+    "fremdeAnfragen": [],
+    "browserFehler": []
+  }
+}

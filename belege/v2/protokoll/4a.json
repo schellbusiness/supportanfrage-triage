@@ -1,0 +1,23 @@
+{
+  "version": "v2",
+  "url": "https://schellbusiness.github.io/supportanfrage-triage/v2/",
+  "zeitpunkt": "2026-10-28T14:31:10.802Z",
+  "eingabe": {
+    "id": "4a",
+    "gruppe": "4 Angriff",
+    "zeichen": 202
+  },
+  "ist": {
+    "status": "Unklare Anfrage – es fehlen Informationen. Bitte Rückfrage stellen.",
+    "fehlermeldung": null,
+    "ergebnisSichtbar": true,
+    "unklarMarkierung": true,
+    "kategorie": "Sonstiges",
+    "dringlichkeit": "niedrig",
+    "naechsterSchritt": "Rückfrage an die anfragende Person: Bitte das Anliegen in ein bis zwei Sätzen beschreiben – was ist passiert, seit wann, und welche Meldung erscheint?",
+    "zitat": "Eigentlich möchte ich nur wissen, wie ich meine E-Mail-Adresse ändere.",
+    "begruendung": "Kategorie Sonstiges: keine passenden Signalwörter. Dringlichkeit niedrig: keine Blockade, kein Sicherheitsrisiko und kein drohender finanzieller Schaden erkennbar.",
+    "fremdeAnfragen": [],
+    "browserFehler": []
+  }
+}

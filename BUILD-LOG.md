@@ -6,7 +6,7 @@
 | Startzeit | 28.10.2026, 14:58 Uhr (CET) |
 | Prompt | Build-Prompt aus der Übung, unverändert (siehe unten) |
 | Ergebnis | statische Web-App: `v1/index.html`, `v1/app.js`, `v1/triage.js`, `v1/style.css` |
-| v1-URL | siehe AUSARBEITUNG.md (wird nach dem Veröffentlichen eingetragen) |
+| v1-URL | https://schellbusiness.github.io/supportanfrage-triage/v1/ (GitHub Pages, Tag `v1`) |
 
 ## Build-Prompt (unverändert übernommen)
 
