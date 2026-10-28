@@ -1,0 +1,164 @@
+:root {
+  --text: #1c2024;
+  --text-leise: #5b6470;
+  --hintergrund: #f4f5f7;
+  --flaeche: #ffffff;
+  --rand: #d9dde3;
+  --akzent: #1f5fbf;
+  --akzent-hover: #174a96;
+  --erfolg: #1e7a46;
+  --erfolg-hell: #e6f4ec;
+  --unklar: #8a5a00;
+  --unklar-hell: #fff4dc;
+  --fehler: #b3261e;
+  --fehler-hell: #fdecea;
+  --hoch: #b3261e;
+  --mittel: #8a5a00;
+  --niedrig: #1e7a46;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--hintergrund);
+  color: var(--text);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.app {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+h1 { font-size: 1.6rem; margin: 0 0 8px; }
+h2 { font-size: 1.15rem; margin: 0; }
+
+.intro { color: var(--text-leise); margin: 0 0 20px; }
+
+form {
+  background: var(--flaeche);
+  border: 1px solid var(--rand);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+label { display: block; font-weight: 600; margin-bottom: 6px; }
+
+textarea {
+  width: 100%;
+  min-height: 160px;
+  padding: 10px 12px;
+  border: 1px solid var(--rand);
+  border-radius: 8px;
+  font: inherit;
+  resize: vertical;
+}
+textarea:focus { outline: 2px solid var(--akzent); outline-offset: 1px; }
+
+.form-zeile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.zaehler { color: var(--text-leise); font-size: 0.9rem; }
+.zaehler.zu-lang { color: var(--fehler); font-weight: 600; }
+
+button {
+  background: var(--akzent);
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover { background: var(--akzent-hover); }
+button:disabled { opacity: 0.6; cursor: progress; }
+
+.status {
+  margin: 16px 0 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--rand);
+  background: var(--flaeche);
+  font-weight: 600;
+}
+.app[data-state="verarbeitung"] .status { color: var(--akzent); }
+.app[data-state="erfolg"] .status { color: var(--erfolg); background: var(--erfolg-hell); border-color: transparent; }
+.app[data-state="unklar"] .status { color: var(--unklar); background: var(--unklar-hell); border-color: transparent; }
+.app[data-state="fehler"] .status { color: var(--fehler); background: var(--fehler-hell); border-color: transparent; }
+
+.fehler {
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--fehler-hell);
+  color: var(--fehler);
+}
+
+.ergebnis {
+  margin-top: 16px;
+  background: var(--flaeche);
+  border: 1px solid var(--rand);
+  border-radius: 10px;
+  padding: 16px;
+}
+.app[data-state="unklar"] .ergebnis { border: 2px solid var(--unklar); }
+
+.ergebnis-kopf { display: flex; align-items: center; gap: 10px; }
+
+.markierung-unklar {
+  background: var(--unklar);
+  color: #fff;
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.unklar-grund { color: var(--unklar); margin: 8px 0 0; }
+
+.felder {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 20px;
+  margin: 16px 0 0;
+}
+.felder .breit { grid-column: 1 / -1; }
+.felder dt { font-size: 0.85rem; color: var(--text-leise); font-weight: 600; }
+.felder dd { margin: 2px 0 0; font-weight: 600; }
+#schritt { font-weight: 400; }
+
+#dringlichkeit[data-stufe="hoch"] { color: var(--hoch); }
+#dringlichkeit[data-stufe="mittel"] { color: var(--mittel); }
+#dringlichkeit[data-stufe="niedrig"] { color: var(--niedrig); }
+
+blockquote {
+  margin: 4px 0 0;
+  padding: 8px 12px;
+  border-left: 4px solid var(--akzent);
+  background: var(--hintergrund);
+  font-weight: 400;
+  font-style: italic;
+  overflow-wrap: anywhere;
+}
+blockquote::before { content: "„"; }
+blockquote::after { content: "“"; }
+
+.begruendung { margin: 16px 0 0; font-size: 0.9rem; color: var(--text-leise); }
+
+footer { margin-top: 32px; font-size: 0.8rem; color: var(--text-leise); }
+
+@media (max-width: 520px) {
+  .felder { grid-template-columns: 1fr; }
+  button { width: 100%; }
+}

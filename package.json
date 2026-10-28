@@ -1,0 +1,15 @@
+{
+  "name": "supportanfrage-triage",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Übung M5.3: regelbasierte Triage für Supportanfragen (v1/v2) mit Prüfvertrag und Tests",
+  "scripts": {
+    "serve": "npx --yes http-server . -p 4173 -c-1 --silent",
+    "test:regeln": "node --test tests/regeln.test.mjs",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1"
+  }
+}
